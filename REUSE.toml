@@ -2,9 +2,11 @@ version = 1
 
 [[annotations]]
 path = [
+ ".envrc-example",
  ".formatter.exs",
  ".github/CODEOWNERS",
  ".gitignore",
+ ".tool-versions",
  "CHANGELOG.md",
  "nerves_defconfig",
  "NOTICE",
@@ -71,7 +73,8 @@ path = [
  "config.txt",
  "rootfs_overlay/etc/boardid.config",
  "rootfs_overlay/etc/erlinit.config",
- "rootfs_overlay/etc/fw_env.config"
+ "rootfs_overlay/etc/fw_env.config",
+ "rootfs_overlay/etc/socketcand.conf"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "None"

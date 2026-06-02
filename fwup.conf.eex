@@ -26,6 +26,8 @@ file_resources = [
   %{name: "bcm2710-rpi-cm3.dtb", path: "${NERVES_SYSTEM}/images/bcm2710-rpi-cm3.dtb"},
   %{name: "bcm2710-rpi-zero-2-w.dtb", path: "${NERVES_SYSTEM}/images/bcm2710-rpi-zero-2-w.dtb"},
   %{name: "overlays/i2c-mux.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/i2c-mux.dtbo"},
+  # NAUTIC_NET: PiCAN-M (MCP2515) CAN overlay
+  %{name: "overlays/mcp2515-can0.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/mcp2515-can0.dtbo"},
   %{name: "overlays/imx219.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/imx219.dtbo"},
   %{name: "overlays/imx296.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/imx296.dtbo"},
   %{name: "overlays/imx477.dtbo", path: "${NERVES_SYSTEM}/images/rpi-firmware/overlays/imx477.dtbo"},

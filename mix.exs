@@ -1,8 +1,8 @@
-defmodule NervesSystemRpi3.MixProject do
+defmodule NauticNetSystemRpi3.MixProject do
   use Mix.Project
 
-  @github_organization "nerves-project"
-  @app :nerves_system_rpi3
+  @github_organization "opensailing"
+  @app :nautic_net_system_rpi3
   @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -79,7 +79,7 @@ defmodule NervesSystemRpi3.MixProject do
 
   defp description do
     """
-    Nerves System - Raspberry Pi 3B, 3B+, Zero 2W
+    Nautic Net Nerves System - Raspberry Pi 3B, 3B+, Zero 2W (PiCAN-M + Sixfab LTE)
     """
   end
 
@@ -101,7 +101,7 @@ defmodule NervesSystemRpi3.MixProject do
       links: %{
         "GitHub" => @source_url,
         "REUSE Compliance" =>
-          "https://api.reuse.software/info/github.com/nerves-project/nerves_system_rpi3"
+          "https://api.reuse.software/info/github.com/opensailing/nautic_net_system_rpi3"
       }
     ]
   end
