@@ -12,6 +12,35 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v3.0.0
+
+64-bit (AArch64) port. The system now runs the BCM2837's Cortex-A53 cores in
+64-bit mode, primarily to enable the Erlang/OTP JIT (BeamAsm) and the faster
+aarch64 crypto paths. Modeled on nerves_system_rpi0_2 v2.0.3 (the official
+64-bit system for the same silicon), keeping this fork's PiCAN-M, Sixfab LTE,
+and iptables support.
+
+* Breaking changes
+  * Toolchain switched from `armv7_nerves_linux_gnueabihf` to
+    `aarch64_nerves_linux_gnu` (both v13.2.0). All NIFs are rebuilt for
+    aarch64; firmware `meta-architecture` is now `aarch64`.
+  * Kernel is the arm64 build of the same rpi-6.12 tree (`kernel8.img` via
+    `arm_64bit=1`; previously `zImage`). Kernel config follows
+    nerves_system_rpi0_2 v2.0.3 with this board's drivers retained:
+    dwc_otg USB host, LAN7515/LAN9514 ethernet, USB serial (CANUSB),
+    QMI/NCM WWAN, SocketCAN + MCP2515, netfilter/iptables.
+    Deliberate deviations from rpi0_2: plain `CONFIG_PREEMPT` (not
+    `PREEMPT_RT`) to match previous fleet behavior with dwc_otg, and
+    `BCM2835_THERMAL` (the correct sensor for BCM2837).
+  * fwup upgrade tasks no longer *require* a matching
+    `nerves_fw_architecture` in the U-Boot env (mirroring
+    nerves_system_rpi0_2), so devices running the 32-bit v2.x firmware can
+    take this as an OTA. The architecture is still recorded via
+    `uboot_setenv` after install. NOTE: bench-test the 32→64-bit OTA on a
+    spare device before fleet rollout; NervesHub deployment groups also
+    match on architecture, so aarch64 firmware needs its own deployment
+    group.
+
 ## v2.0.3
 
 This is a security and bug fix release.
