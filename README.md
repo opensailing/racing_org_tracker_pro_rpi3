@@ -6,6 +6,12 @@
 
 This is the base Nerves System configuration for the Raspberry Pi 3 Model B.
 
+**RacingOrg fork (v3.0.0+): this system is a 64-bit (AArch64) build.** It runs
+the BCM2837's Cortex-A53 in 64-bit mode — enabling the Erlang/OTP JIT — using
+the `aarch64_nerves_linux_gnu` toolchain, modeled on `nerves_system_rpi0_2`
+(the official 64-bit system for the same silicon) while keeping this fork's
+PiCAN-M (MCP2515 CAN), Sixfab LTE (QMI), and iptables support.
+
 *This is the `main` branch. If you are customizing a `v1.x` system, please see
 the `maint-v1.x` branch. See the "Upgrading to 2.0" section if you are upgrading
 your Nerves system dependency.*

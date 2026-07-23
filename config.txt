@@ -9,7 +9,9 @@
 # https://github.com/raspberrypi/documentation/blob/master/configuration/device-tree.md
 # https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README
 
-kernel=zImage
+# Boot the 64-bit kernel (the RPi firmware loads kernel8.img when
+# arm_64bit is set)
+arm_64bit=1
 
 # Disable the boot rainbow
 disable_splash=1
